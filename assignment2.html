@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>과제2</title>
+    <style>
+      body {
+        padding: 30px;
+      }
+      div {
+        padding: 23px;
+        border: 1px solid #999999;
+        background-color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      <div>
+        <div>
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <div>
+                        <div>
+                          <div>
+                            <div>
+                              <div>
+                                <div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const divs = document.querySelectorAll('div')
+      divs.forEach(div => {
+          div.style.backgroundColor = '#ffffff'
+          const change = event => {
+            console.log(div.tagName)
+            if (event.target.parentElement.tagName === 'DIV') {
+              event.target.style.backgroundColor = '#0977ad'
+              event.target.parentElement.style.backgroundColor = '#f1c40f'
+            } else {
+              event.target.style.backgroundColor = '#0977ad'
+              event.target.parentElement.style.backgroundColor = '#ffffff'
+            }
+          }
+          div.addEventListener('click', change)
+          div.addEventListener('mouseout', function(event){
+            event.target.style.backgroundColor = '#ffffff'
+            event.target.parentElement.style.backgroundColor = '#ffffff'
+          })
+        })
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> 글자수세기 </h1>
+    <textarea id= 'insert' rows= '10' cols = '20'></textarea>
+    <p id = 'with_blank'>공백 포함: </p>
+    <p id = 'out_blank'>공백 제외: </p>
+    <script>
+        const with_blank = document.querySelector('#with_blank')
+        const out_blank = document.querySelector('#out_blank')
+        const text = document.querySelector('#insert')
+        const wordWith = (event) => {
+            with_blank.textContent = '공백 포함: ' + text.value.length
+            out_blank.textContent = '공백 제외: ' + text.value.replace(/\s/gi, "").length
+        }
+        text.addEventListener('keyup', wordWith)
+
+    </script>
+</body>
+</html>
